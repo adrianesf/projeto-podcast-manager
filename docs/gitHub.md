@@ -1,9 +1,9 @@
-# Como subir projeto no GitHub via VSCode
+# Como subir projeto no GitHub via Terminal
 
 ## No GitHub
     - Criar repositório no GitHub
 
-## No VSCode
+## No Terminal
 
     Criar arquivo .gitignore e colocar as pastas e arquivos que devem ser ignorados
 
@@ -14,7 +14,7 @@
     - git add .
 
     Renomear branch
-    - git branch -M main
+    - git branch - M main
 
     Commit
     - git commit -m "Project created"
