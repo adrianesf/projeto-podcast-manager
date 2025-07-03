@@ -2,22 +2,26 @@ import fs from "fs";
 import path from "path";
 
 import { PodcastModel } from "../models/podcast-model";
+import { FilterType } from "../utils/filter-type";
 
 const pathData = path.join(__dirname, "../repositories/podcasts.json");
 
 export const repositoryPodcast = async (
-  podcastName?: string
+  tag?:string, filter?: string
 ): Promise<PodcastModel[]> => {
   const language = "utf-8";
 
   const rawData = fs.readFileSync(pathData, language);
   let jsonFile = JSON.parse(rawData);
 
-  if (podcastName) {
-    jsonFile = jsonFile.filter(
-      (podcast: PodcastModel) => podcast.podcastName === podcastName
-    );
-  }
+  if (filter) {    
+    if(tag === FilterType.PODCASTNAME){
+      jsonFile = jsonFile.filter((podcast: PodcastModel) => podcast.podcastName === filter);
+    }
 
+    if(tag === FilterType.CATEGORIE){
+      jsonFile = jsonFile.filter((podcast: PodcastModel) => podcast.categories.some(categorie => categorie === filter))
+    }
+  }
   return jsonFile;
 };

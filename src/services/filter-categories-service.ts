@@ -3,8 +3,8 @@ import { repositoryPodcast } from "../repositories/podcasts-repository";
 import { FilterType } from "../utils/filter-type";
 import { StatusCode } from "../utils/status-code";
 
-export const serviceFilterEpisodes = async (
-  podcastName: string | undefined
+export const serviceFilterCategories = async (
+  categorie: string | undefined
 ): Promise<PodcastTransferModel> => {
   //define a interface de retorno
   let responseFormat: PodcastTransferModel = {
@@ -13,13 +13,13 @@ export const serviceFilterEpisodes = async (
   };
 
   //buscando os dados
-  const queryString = podcastName?.split("?podcastName=")[1] || "";    
+  const queryString = categorie?.split("?categories=")[1] || "";    
   
   //Forma de pegar outros parametros na URL
   //const query = new URLSearchParams(podcastName);  
   //const podcastName = urlParams.get('podcastName');
 
-  const data = await repositoryPodcast(FilterType.PODCASTNAME,queryString);
+  const data = await repositoryPodcast(FilterType.CATEGORIE,queryString);
 
   responseFormat = {
     statusCode: data.length !== 0 ? StatusCode.OK : StatusCode.NoContent,
