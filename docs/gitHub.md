@@ -1,4 +1,4 @@
-# Como subir projeto no GitHub via VSCode
+# Como subir projeto no GitHub via Terminal
 
 ## No GitHub
     - Criar repositório no GitHub
