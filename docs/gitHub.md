@@ -3,7 +3,7 @@
 ## No GitHub
     - Criar repositório no GitHub
 
-## No VSCode
+## No Terminal
 
     Criar arquivo .gitignore e colocar as pastas e arquivos que devem ser ignorados
 
