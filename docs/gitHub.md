@@ -14,7 +14,7 @@
     - git add .
 
     Renomear branch
-    - git b ranch - M main
+    - git branch - M main
 
     Commit
     - git commit -m "Project created"
